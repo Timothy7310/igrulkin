@@ -1,5 +1,6 @@
 import { Game as GamesItemProps } from 'app/types';
 import { Link } from 'react-router-dom';
+import { getRussianFormatDate } from 'helpers';
 import styles from './GamesItem.module.css';
 
 const GamesItem = ({ game }: { game: GamesItemProps }) => {
@@ -16,7 +17,7 @@ const GamesItem = ({ game }: { game: GamesItemProps }) => {
               loading="lazy"
               className={styles.game__poster}
             />
-            <span className={styles.game__date}>{game.release_date}</span>
+            <span className={styles.game__date}>{getRussianFormatDate(game.release_date)}</span>
           </div>
           <div className={styles.game__bottom}>
             <h3 className={styles.game__name}>{game.title}</h3>

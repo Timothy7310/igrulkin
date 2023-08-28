@@ -1,6 +1,6 @@
 import { Wrapper } from 'shared/ui/wrapper';
 import { Link } from 'react-router-dom';
-import logo from 'assets/logo.png';
+import logo from 'shared/assets/images/logo.png';
 import styles from './Header.module.css';
 
 export const Header = () => {

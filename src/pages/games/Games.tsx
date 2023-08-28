@@ -7,7 +7,7 @@ const Games = () => {
   return (
     <Wrapper>
       <section className={styles.games}>
-        <h2 className={styles.games__title}>Games</h2>
+        <h2 className={styles.games__title}>Игры</h2>
         <GamesList games={mock} />
       </section>
     </Wrapper>

@@ -1,4 +1,4 @@
-import { Game as GamesItemProps } from 'app/types';
+import { Games as GamesItemProps } from 'app/types';
 import { Link } from 'react-router-dom';
 import { getRussianFormatDate } from 'helpers';
 import styles from './GamesItem.module.css';

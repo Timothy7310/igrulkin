@@ -1,4 +1,4 @@
-import { Layout, Spinner } from 'shared/ui';
+import { Layout } from 'shared/ui';
 import { Routing } from './routing';
 import './index.css';
 

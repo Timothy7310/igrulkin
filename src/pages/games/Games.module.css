@@ -1,6 +1,7 @@
 .games {
   display: flex;
   flex-direction: column;
+  align-self: flex-start;
   gap: 40px;
   width: 100%;
   &__title {
@@ -11,5 +12,16 @@
     text-transform: uppercase;
     font-weight: 900;
     font-size: 24px;
+    font-family: Dewi, sans-serif;
+    letter-spacing: 3px;
+  }
+  &__error {
+    margin: 0;
+    font-family: Dewi, sans-serif;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    &_span {
+      color: var(--color-warning);
+    }
   }
 }

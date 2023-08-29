@@ -4,7 +4,9 @@ import styles from './Footer.module.css';
 export const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <Wrapper>footer</Wrapper>
+      <Wrapper>
+        <span className={styles.footer__year}>2023</span>
+      </Wrapper>
     </footer>
   );
 };

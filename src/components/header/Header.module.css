@@ -1,3 +1,21 @@
 .header {
-  color: tomato;
+  padding: 30px 0px;
+  border-bottom: 1px solid var(--color-secondary);
+  &__logo {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    &_icon {
+      width: 50px;
+    }
+    &_text {
+      margin: 0;
+      border-bottom: 2px solid var(--color-accent-2);
+      text-transform: uppercase;
+      font-weight: 900;
+      font-size: 28px;
+      font-family: Dewi, sans-serif;
+      letter-spacing: 6px;
+    }
+  }
 }

@@ -4,4 +4,5 @@
   grid-template-rows: max-content 1fr max-content;
   min-height: 100vh;
   background-color: var(--bg-main);
+  gap: 40px;
 }

@@ -1,17 +1,15 @@
-import { MainLazy, NotFound } from 'pages';
+import { GamesLazy, NotFound } from 'pages';
 
 export enum AppRoutes {
-  MAIN = 'main',
-  ANIME = 'anime',
-  MANGA = 'manga',
+  GAMES = 'games',
   NOTFOUND = 'notFound',
 }
 
 export const routesConfig = [
   {
-    id: [AppRoutes.MAIN],
+    id: [AppRoutes.GAMES],
     path: '/',
-    content: <MainLazy />,
+    content: <GamesLazy />,
   },
   {
     id: [AppRoutes.NOTFOUND],

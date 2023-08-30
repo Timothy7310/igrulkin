@@ -114,6 +114,11 @@
     }
   }
   &__back {
+    background-color: transparent;
+    border: none;
+    color: var(--color-white);
+    cursor: pointer;
+    padding: 0;
     position: relative;
     align-self: flex-start;
     font-family: Dewi, sans-serif;

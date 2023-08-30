@@ -4,22 +4,23 @@ import { Carousel } from 'antd';
 import { Spinner } from 'shared/ui';
 import { Wrapper } from 'shared/ui/wrapper';
 import { gamesAPI } from 'app/services';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import styles from './Game.module.css';
 
 const Game = () => {
   const { id } = useParams();
   const { data: game, isLoading, isError, error } = gamesAPI.useFetchGameByIDQuery(id ?? '');
+  const navigate = useNavigate();
 
   return (
     <Wrapper>
       <section className={styles.game__wrap}>
-        <Link
+        <button
           className={styles.game__back}
-          to="/"
+          onClick={() => navigate(-1)}
         >
           Назад
-        </Link>
+        </button>
 
         {isLoading && <Spinner />}
         {isError && 'originalStatus' in error && (

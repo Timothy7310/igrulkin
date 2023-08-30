@@ -1,12 +1,11 @@
-import styles from './Game.module.css';
-import { useParams } from 'react-router-dom';
-import { gamesAPI } from 'app/services';
-import { Spinner } from 'shared/ui';
-import { Wrapper } from 'shared/ui/wrapper';
-import { Link } from 'react-router-dom';
 import { getRussianFormatDate } from 'helpers';
 import { classNames } from 'shared/libs';
 import { Carousel } from 'antd';
+import { Spinner } from 'shared/ui';
+import { Wrapper } from 'shared/ui/wrapper';
+import { gamesAPI } from 'app/services';
+import { useParams, Link } from 'react-router-dom';
+import styles from './Game.module.css';
 
 const Game = () => {
   const { id } = useParams();

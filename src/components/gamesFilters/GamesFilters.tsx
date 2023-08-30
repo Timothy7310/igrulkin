@@ -1,4 +1,3 @@
-import { Select } from 'antd';
 import {
   GameGenre,
   GamePlatform,
@@ -8,6 +7,7 @@ import {
   SearchParams,
   SearchParamsType,
 } from 'app/types';
+import { Select } from 'antd';
 import { classNames } from 'shared/libs';
 import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';

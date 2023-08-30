@@ -1,12 +1,11 @@
-import { Wrapper } from 'shared/ui/wrapper';
-import GamesList from 'components/gamesList/GamesList';
-import { GamesFilters } from 'components';
-import { useSearchParams } from 'react-router-dom';
 import { SearchParamsType } from 'app/types';
+import { Wrapper } from 'shared/ui/wrapper';
+import { Spinner } from 'shared/ui';
+import { GamesList, GamesFilters } from 'components';
+import { gamesAPI } from 'app/services';
+import { useSearchParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import styles from './Games.module.css';
-import { gamesAPI } from 'app/services';
-import { Spinner } from 'shared/ui';
 
 import { hasFetchQuery, hasFetchTagQuery } from 'helpers';
 

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { getRussianFormatDate } from 'helpers';
 import styles from './GamesItem.module.css';
 
-const GamesItem = ({ game }: { game: GamesItemProps }) => {
+export const GamesItem = ({ game }: { game: GamesItemProps }) => {
   return (
     <li className={styles.item}>
       <Link to={`/game/${game.id}`}>
@@ -32,5 +32,3 @@ const GamesItem = ({ game }: { game: GamesItemProps }) => {
     </li>
   );
 };
-
-export default GamesItem;

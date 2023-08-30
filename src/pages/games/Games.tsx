@@ -37,13 +37,13 @@ const Games = () => {
       <section className={styles.games}>
         <h2 className={styles.games__title}>Игры</h2>
         {isLoading && <Spinner />}
-        {isError && 'originalStatus' in error && (
+        {isError && 'status' in error && (
           <p className={styles.games__error}>
-            ёмаё, ошибка с кодом{' '}
-            <span className={styles.games__error_span}>{error.originalStatus}</span>
+            ёмаё, ошибка со статусом{' '}
+            <span className={styles.games__error_span}>{error.status}</span>
           </p>
         )}
-        {!isEmptyResult() && <GamesFilters />}
+        {!isEmptyResult() && games && <GamesFilters />}
         {!isEmptyResult() && games && <GamesList games={games} />}
         {isEmptyResult() && <span className={styles.games__error}>ёмаё, такого не существует</span>}
       </section>

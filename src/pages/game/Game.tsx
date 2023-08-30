@@ -23,10 +23,9 @@ const Game = () => {
         </button>
 
         {isLoading && <Spinner />}
-        {isError && 'originalStatus' in error && (
+        {isError && 'status' in error && (
           <p className={styles.game__error}>
-            ёмаё, ошибка с кодом{' '}
-            <span className={styles.game__error_span}>{error.originalStatus}</span>
+            ёмаё, ошибка с кодом <span className={styles.game__error_span}>{error.status}</span>
           </p>
         )}
         {game && (

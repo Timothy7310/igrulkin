@@ -10,8 +10,8 @@ export const gamesAPI = createApi({
         url: '/games',
       }),
     }),
-    fetchGameByID: build.query<Game, number>({
-      query: (id: number) => ({
+    fetchGameByID: build.query<Game, string>({
+      query: (id: string) => ({
         url: `/game`,
         params: {
           id,

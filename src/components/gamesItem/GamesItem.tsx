@@ -6,7 +6,7 @@ import styles from './GamesItem.module.css';
 const GamesItem = ({ game }: { game: GamesItemProps }) => {
   return (
     <li className={styles.item}>
-      <Link to="/">
+      <Link to={`/game/${game.id}`}>
         <article className={styles.game}>
           <div className={styles.game__top}>
             <img

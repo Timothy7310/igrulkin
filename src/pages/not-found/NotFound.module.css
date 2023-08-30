@@ -1,3 +1,18 @@
 .inner__404 {
   flex-direction: column;
+  align-items: first baseline;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.title {
+  margin: 0;
+  font-family: Dewi, sans-serif;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.text {
+  margin: 0;
+  font-size: 18px;
 }

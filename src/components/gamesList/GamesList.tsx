@@ -1,8 +1,8 @@
 import { GamesList as GameListProps } from 'app/types';
-import GamesItem from 'components/gamesItem/GamesItem';
+import { GamesItem } from 'components';
 import styles from './GamesList.module.css';
 
-const GamesList = ({ games }: { games: GameListProps }) => {
+export const GamesList = ({ games }: { games: GameListProps }) => {
   return (
     <ul className={styles.list}>
       {games.map((game) => (
@@ -14,5 +14,3 @@ const GamesList = ({ games }: { games: GameListProps }) => {
     </ul>
   );
 };
-
-export default GamesList;

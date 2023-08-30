@@ -1,32 +1,31 @@
-import styles from './Game.module.css';
-import { useParams } from 'react-router-dom';
-import { gamesAPI } from 'app/services';
-import { Spinner } from 'shared/ui';
-import { Wrapper } from 'shared/ui/wrapper';
-import { Link } from 'react-router-dom';
 import { getRussianFormatDate } from 'helpers';
 import { classNames } from 'shared/libs';
 import { Carousel } from 'antd';
+import { Spinner } from 'shared/ui';
+import { Wrapper } from 'shared/ui/wrapper';
+import { gamesAPI } from 'app/services';
+import { useParams, Link, useNavigate } from 'react-router-dom';
+import styles from './Game.module.css';
 
 const Game = () => {
   const { id } = useParams();
   const { data: game, isLoading, isError, error } = gamesAPI.useFetchGameByIDQuery(id ?? '');
+  const navigate = useNavigate();
 
   return (
     <Wrapper>
       <section className={styles.game__wrap}>
-        <Link
+        <button
           className={styles.game__back}
-          to="/"
+          onClick={() => navigate(-1)}
         >
           Назад
-        </Link>
+        </button>
 
         {isLoading && <Spinner />}
-        {isError && 'originalStatus' in error && (
+        {isError && 'status' in error && (
           <p className={styles.game__error}>
-            ёмаё, ошибка с кодом{' '}
-            <span className={styles.game__error_span}>{error.originalStatus}</span>
+            ёмаё, ошибка с кодом <span className={styles.game__error_span}>{error.status}</span>
           </p>
         )}
         {game && (

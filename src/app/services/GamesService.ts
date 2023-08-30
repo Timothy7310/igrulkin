@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react';
-import { GamesList, Game } from 'app/types';
+import { GamesList, Game, SearchParamsType } from 'app/types';
 
 export const gamesAPI = createApi({
   reducerPath: 'gamesAPI',
@@ -10,9 +10,30 @@ export const gamesAPI = createApi({
         url: '/games',
       }),
     }),
+    fetchFilteredGames: build.query<GamesList, SearchParamsType>({
+      query: (searchParams: SearchParamsType) => {
+        return {
+          url: '/filter',
+          params: {
+            tag: searchParams.tag,
+            platform: searchParams.platform,
+            'sort-by': searchParams['sort-by'],
+          },
+        };
+      },
+    }),
+    fetchGamesWithQuery: build.query<GamesList, SearchParamsType>({
+      query: (searchParams: SearchParamsType) => ({
+        url: '/games',
+        params: {
+          platform: searchParams.platform,
+          'sort-by': searchParams['sort-by'],
+        },
+      }),
+    }),
     fetchGameByID: build.query<Game, string>({
       query: (id: string) => ({
-        url: `/game`,
+        url: '/game',
         params: {
           id,
         },

@@ -4,6 +4,7 @@ import { GamesList, Game, SearchParamsType } from 'app/types';
 export const gamesAPI = createApi({
   reducerPath: 'gamesAPI',
   baseQuery: fetchBaseQuery({ baseUrl: 'https://www.freetogame.com/api' }),
+  keepUnusedDataFor: 5,
   endpoints: (build) => ({
     fetchAllGames: build.query<GamesList, ''>({
       query: () => ({
@@ -32,12 +33,15 @@ export const gamesAPI = createApi({
       }),
     }),
     fetchGameByID: build.query<Game, string>({
-      query: (id: string) => ({
-        url: '/game',
-        params: {
-          id,
-        },
-      }),
+      query: (id: string) => {
+        console.log('test');
+        return {
+          url: '/game',
+          params: {
+            id,
+          },
+        };
+      },
     }),
   }),
 });

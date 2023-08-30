@@ -19,3 +19,9 @@
     }
   }
 }
+
+@media (max-width: 390px) {
+  .header__logo_text {
+    font-size: 25px;
+  }
+}

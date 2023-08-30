@@ -34,7 +34,6 @@ export const gamesAPI = createApi({
     }),
     fetchGameByID: build.query<Game, string>({
       query: (id: string) => {
-        console.log('test');
         return {
           url: '/game',
           params: {

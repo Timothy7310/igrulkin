@@ -7,7 +7,10 @@ export const GamesItem = ({ game }: { game: GamesItemProps }) => {
   return (
     <li className={styles.item}>
       <Link to={`/game/${game.id}`}>
-        <article className={styles.game}>
+        <article
+          className={styles.game}
+          data-testid="game-item"
+        >
           <div className={styles.game__top}>
             <img
               src={game.thumbnail}

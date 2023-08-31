@@ -11,7 +11,6 @@ const Game = () => {
   const { id } = useParams();
   const { data: game, isLoading, isError, error } = gamesAPI.useFetchGameByIDQuery(id ?? '');
   const navigate = useNavigate();
-  console.log('test');
   return (
     <Wrapper>
       <section className={styles.game__wrap}>

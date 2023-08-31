@@ -31,8 +31,6 @@ const Games = () => {
     return Boolean(games && 'status' in games);
   };
 
-  console.log(error);
-
   return (
     <Wrapper>
       <section className={styles.games}>

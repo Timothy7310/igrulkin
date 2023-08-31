@@ -11,7 +11,7 @@ const Game = () => {
   const { id } = useParams();
   const { data: game, isLoading, isError, error } = gamesAPI.useFetchGameByIDQuery(id ?? '');
   const navigate = useNavigate();
-
+  console.log('test');
   return (
     <Wrapper>
       <section className={styles.game__wrap}>
@@ -23,9 +23,10 @@ const Game = () => {
         </button>
 
         {isLoading && <Spinner />}
-        {isError && 'status' in error && (
+        {isError && 'status' in (error as { status: '' }) && (
           <p className={styles.game__error}>
-            ёмаё, ошибка с кодом <span className={styles.game__error_span}>{error.status}</span>
+            ёмаё, ошибка с кодом{' '}
+            <span className={styles.game__error_span}>{(error as { status: '' }).status}</span>
           </p>
         )}
         {game && (

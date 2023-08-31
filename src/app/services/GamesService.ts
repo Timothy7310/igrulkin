@@ -1,9 +1,17 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react';
+import { createApi, fetchBaseQuery, retry } from '@reduxjs/toolkit/dist/query/react';
 import { GamesList, Game, SearchParamsType } from 'app/types';
 
 export const gamesAPI = createApi({
   reducerPath: 'gamesAPI',
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://www.freetogame.com/api' }),
+  baseQuery: retry(
+    fetchBaseQuery({
+      baseUrl: 'https://www.freetogame.com/api',
+    }),
+    { maxRetries: 3 }
+  ),
+  // baseQuery: fetchBaseQuery({
+  //   baseUrl: 'https://www.freetogame.com/api',
+  // }),
   keepUnusedDataFor: 5,
   endpoints: (build) => ({
     fetchAllGames: build.query<GamesList, ''>({
@@ -12,7 +20,7 @@ export const gamesAPI = createApi({
       }),
     }),
     fetchFilteredGames: build.query<GamesList, SearchParamsType>({
-      query: (searchParams: SearchParamsType) => {
+      query: (searchParams) => {
         return {
           url: '/filter',
           params: {
@@ -24,7 +32,7 @@ export const gamesAPI = createApi({
       },
     }),
     fetchGamesWithQuery: build.query<GamesList, SearchParamsType>({
-      query: (searchParams: SearchParamsType) => ({
+      query: (searchParams) => ({
         url: '/games',
         params: {
           platform: searchParams.platform,
@@ -33,7 +41,7 @@ export const gamesAPI = createApi({
       }),
     }),
     fetchGameByID: build.query<Game, string>({
-      query: (id: string) => {
+      query: (id) => {
         return {
           url: '/game',
           params: {

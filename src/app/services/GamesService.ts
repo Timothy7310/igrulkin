@@ -5,13 +5,15 @@ export const gamesAPI = createApi({
   reducerPath: 'gamesAPI',
   baseQuery: retry(
     fetchBaseQuery({
-      baseUrl: 'https://www.freetogame.com/api',
+      baseUrl: 'https://free-to-play-games-database.p.rapidapi.com/api',
+      headers: {
+        'X-RapidAPI-Key': '0feebcb57emsh1a2fd2b2c96deb2p1ba316jsn039ba27ca29f',
+        'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com',
+      },
+      responseHandler: 'content-type',
     }),
     { maxRetries: 3 }
   ),
-  // baseQuery: fetchBaseQuery({
-  //   baseUrl: 'https://www.freetogame.com/api',
-  // }),
   keepUnusedDataFor: 5,
   endpoints: (build) => ({
     fetchAllGames: build.query<GamesList, ''>({

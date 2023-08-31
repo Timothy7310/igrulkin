@@ -1,0 +1,47 @@
+.filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  &__label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-family: Dewi, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 16px;
+  }
+  &__select {
+    & :global {
+      .ant-select-selector {
+        background-color: var(--color-accent-2) !important;
+        color: var(--color-white) !important;
+        text-transform: capitalize;
+        letter-spacing: 0px;
+        font-family: Inter, sans-serif;
+      }
+      .ant-select-selection-placeholder {
+        color: var(--color-white) !important;
+      }
+      .ant-select-arrow {
+        color: var(--color-white) !important;
+      }
+      .ant-select-selection-item-remove svg {
+        fill: var(--color-white);
+      }
+      .ant-select-selection-item {
+        background-color: var(--color-accent);
+      }
+      .ant-select-item {
+        text-transform: capitalize;
+      }
+    }
+  }
+  &__one {
+    & :global {
+      .ant-select-selection-item {
+        background-color: transparent;
+      }
+    }
+  }
+}
